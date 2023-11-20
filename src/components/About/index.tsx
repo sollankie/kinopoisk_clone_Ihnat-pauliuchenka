@@ -1,9 +1,15 @@
-function App() {
-    return (
-      <div className="App">
-        About
+import React from 'react';
+import Layout from '../Layout';
+
+const About: React.FC = () => {
+  return (
+    <Layout>
+      <div>
+        <h2>About Page Content</h2>
+        {/* Additional content for the About page */}
       </div>
-    );
-  }
-  
-  export default App;
+    </Layout>
+  );
+};
+
+export default About;

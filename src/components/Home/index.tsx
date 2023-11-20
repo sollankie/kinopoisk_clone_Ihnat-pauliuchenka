@@ -1,28 +1,16 @@
-import { useSelector, useDispatch } from "react-redux";
-import { addCounter, resetCounter } from "../../store/actions/index";
+import React from 'react';
+import Layout from '../Layout';
 
-function App() {
-
-  const { amount } = useSelector((state: any) => state.counter);
-  const dispatch = useDispatch();
-
-  const handleAdd = () => {
-    dispatch(addCounter());
-  };
-
-  const handleReset = () => {
-    dispatch(resetCounter());
-  };
-
-
-    return (
-      <div className="App">
-        Home 
-        <h4>{amount}</h4>
-      <button onClick={handleAdd}> ADD </button>
-      <button onClick={handleReset}> RESET </button>
+const Home: React.FC = () => {
+  return (
+    <Layout>
+      <div>
+        <h2>Home Page Content</h2>
+        {/* Additional content for the home page */}
       </div>
-    );
-  }
+    </Layout>
+  );
+};
+
+export default Home;
   
-  export default App;
