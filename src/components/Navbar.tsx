@@ -10,7 +10,7 @@ function App() {
           <Link to="/about">About</Link>
         </li>
         <li>
-          <Link to="/dashboard">Dashboard</Link>
+          <Link to="/favorites">Favorites</Link>
         </li>
       </ul>
     );
