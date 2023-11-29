@@ -9,7 +9,7 @@ function Banner() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const request = await axios.get(requests.fetchNetflixOriginals);
+        const request = await axios.get(requests.fetchNewFilms);
 
         if (request.data.results && request.data.results.length > 0) {
           setMovie(
@@ -50,13 +50,13 @@ function Banner() {
       }}
     >
       <div className={styles.banner_content}>
-        <h1 className={styles.banner_title}>Movie Name</h1>
+        <h1 className={styles.banner_title}>{movie?.title || movie?.name || movie?.original_name}</h1>
         <div className={styles.banner_buttons}>
           <button className={styles.banner_button}>Play</button>
-          <button className={styles.banner_button}>My List</button>
+          <button className={styles.banner_button}>To My List</button>
         </div>
         <h1 className={styles.banner_description}>
-          {truncate(`Test description`, 150)}
+          {truncate(movie?.overview, 250)}
         </h1>
       </div>
 
