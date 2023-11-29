@@ -3,7 +3,7 @@ import * as styledComponents from "styled-components";
 import { ThemedStyledComponentsModule } from "styled-components";
 
 interface Theme {
-  // определите ваш интерфейс темы
+  
 }
 
 const {

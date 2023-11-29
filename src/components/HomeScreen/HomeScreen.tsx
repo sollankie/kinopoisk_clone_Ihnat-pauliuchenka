@@ -1,0 +1,19 @@
+import React from 'react';
+import "./HomeScreen.scss";
+import Nav from '../Nav/Nav';
+import Banner from '../Banner/Banner';
+
+
+
+function HomeScreen() {
+    return  <div className="homeScreen">
+        <Nav />
+       
+        <Banner />
+
+        {/* <Movies /> */}
+
+    </div>;
+}
+
+export default HomeScreen;
