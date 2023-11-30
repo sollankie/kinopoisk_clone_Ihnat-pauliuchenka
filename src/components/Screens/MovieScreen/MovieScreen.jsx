@@ -38,9 +38,9 @@ function MovieScreen() {
     <div className={styles.movieScreen}>
       <Nav />
       <h2 className={styles.movieDetails}>{movie.title}</h2>
-      <img src={posterUrl} alt={movie.title} style={{ maxWidth: '35%' }} />
+      <img className='Poster' src={posterUrl} alt={movie.title} style={{ maxWidth: '35%' }} />
       <p className={styles.movieDetails}>{movie.overview}</p>
-      {/* Add other movie details as needed */}
+      <p className={styles.MovieBudget}>Budget: {movie.budget}$</p>
     </div>
   );
 }
