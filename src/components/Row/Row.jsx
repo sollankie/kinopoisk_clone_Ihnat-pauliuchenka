@@ -6,7 +6,6 @@ import 'slick-carousel/slick/slick-theme.css';
 import axios from '../API/axios';
 import styles from './Row.module.scss';
 
-
 function Row({ title, fetchUrl, isLargeRow = false }) {
   const [movies, setMovies] = useState([]);
   const base_url = 'https://image.tmdb.org/t/p/original/';
