@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from './../../API/axios';
-import API_KEY from './../../API/Requests';
+import API_KEY from '../../API/Api_key';
 
 function MovieScreen() {
     const { movieId } = useParams();
@@ -18,7 +18,7 @@ function MovieScreen() {
                 setError(error);
             }
         }
-    
+
         fetchMovie();
     }, [movieId]);
 
