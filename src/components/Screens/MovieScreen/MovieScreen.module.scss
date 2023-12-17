@@ -1,18 +1,71 @@
-.movieDetails {
+.movieDetailsContainer {
+    display: flex;
     color: white;
-}
-
-.errorText {
-    color: red;
-}
-
-.loadingText {
-    color: yellow;
-}
-
-.movieScreen{
+    text-align: left;
+  }
+  
+  .posterContainer {
+    flex: 0 0 auto;
+    margin-right: 50px;
+    margin-left: 50px;
+  }
+  
+  .movieDetailsContent {
+    flex: 1;
+  }
+  
+  .posterImage {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 5%;
+  }
+  
+  .movieOverview {
+    margin-top: 20px;
+    font-size: 30px;
+  }
+  
+  .movieDetails {
+    margin: 10px 0;
+    font-size: 20px;
+  }
+  
+  .movieScreen {
     padding-top: 100px;
-}
-.img {
-    border-radius: 10%;
-}
+  }
+  
+  .MovieBudget {
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .MovieBudget p {
+    margin-right: 20px;
+  }
+  
+  .movieTitle {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+  
+  .MovieRating {
+    margin-top: 30px;
+    border: 2px solid green;
+    padding: 10px;
+    max-width: 33px;
+  }
+  
+  .ratingNumber {
+    font-size: 24px;
+    color: green;
+  }
+  
+  .errorText {
+    color: red;
+  }
+  
+  .loadingText {
+    color: yellow;
+  }

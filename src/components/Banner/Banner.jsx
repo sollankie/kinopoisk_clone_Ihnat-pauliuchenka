@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import styles from './Banner.module.scss'; 
+import { Link } from 'react-router-dom';
+import styles from './Banner.module.scss';
 import axios from '../API/axios';
 import requests from '../API/Requests';
 
 function Banner() {
-  const [movie, setMovie] = useState([]);
+  const [movie, setMovie] = useState(null);
 
   useEffect(() => {
     async function fetchData() {
@@ -32,17 +33,15 @@ function Banner() {
     return string?.length > n ? string.substr(0, n - 1) + '...' : string;
   }
 
-  
   const backdropPath = movie?.backdrop_path;
 
-  
   const imageUrl = backdropPath
     ? `https://image.tmdb.org/t/p/original/${backdropPath}`
-    : ''; 
+    : '';
 
   return (
     <header
-      className={styles.banner} 
+      className={styles.banner}
       style={{
         backgroundImage: `url('${imageUrl}')`,
         backgroundSize: 'cover',
@@ -50,9 +49,14 @@ function Banner() {
       }}
     >
       <div className={styles.banner_content}>
-        <h1 className={styles.banner_title}>{movie?.title || movie?.name || movie?.original_name}</h1>
+        <h1 className={styles.banner_title}>
+          {movie?.title || movie?.name || movie?.original_name}
+        </h1>
         <div className={styles.banner_buttons}>
-          <button className={styles.banner_button}>Play</button>
+          
+          <Link to={`/movie/${movie?.id}`}>
+            <button className={styles.banner_button}>Play</button>
+          </Link>
           <button className={styles.banner_button}>To My List</button>
         </div>
         <h1 className={styles.banner_description}>
@@ -66,4 +70,3 @@ function Banner() {
 }
 
 export default Banner;
-

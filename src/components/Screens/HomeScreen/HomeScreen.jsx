@@ -14,7 +14,6 @@ function HomeScreen() {
             <Banner />
 
             <Row title="Trending Now" fetchUrl={requests.fetchTrending} isLargeRow />
-            <Row title="New" fetchUrl={requests.fetchNewFilms} isLargeRow />
             <Row title="Top Rated" fetchUrl={requests.fetchTopRated} isLargeRow />
             <Row title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} isLargeRow />
             <Row title="Horrors" fetchUrl={requests.fetchHorrorMovies} isLargeRow />

@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from './../../API/axios';
 import API_KEY from '../../API/Api_key';
 import styles from './MovieScreen.module.scss';
-import Nav from '../../Nav/Nav'; 
+import Nav from '../../Nav/Nav';
 
 function MovieScreen() {
   const { movieId } = useParams();
@@ -34,13 +34,30 @@ function MovieScreen() {
 
   const posterUrl = `https://image.tmdb.org/t/p/original/${movie.poster_path}`;
 
+  const formattedBudget = new Intl.NumberFormat('en-US').format(movie.budget);
+  const formattedRevenue = new Intl.NumberFormat('en-US').format(movie.revenue);
+
   return (
     <div className={styles.movieScreen}>
       <Nav />
-      <h2 className={styles.movieDetails}>{movie.title}</h2>
-      <img src={posterUrl} alt={movie.title} style={{ maxWidth: '35%' }} />
-      <p className={styles.movieDetails}>{movie.overview}</p>
-      {/* Add other movie details as needed */}
+      <div className={styles.movieDetailsContainer}>
+        <div className={styles.posterContainer}>
+          <img className={styles.posterImage} src={posterUrl} alt={movie.title} />
+        </div>
+        <div className={styles.movieDetailsContent}>
+          <h2 className={styles.movieTitle}>{movie.title}</h2>
+          <p className={styles.movieOverview}>{movie.overview}</p>
+          <p className={styles.movieDetails}>Release Date: {movie.release_date}</p>
+          <p className={styles.movieDetails}>Runtime: {movie.runtime} minutes</p>
+          <div className={styles.MovieBudget}>
+            <p>Budget: ${formattedBudget}</p>
+            <p>Revenue: ${formattedRevenue}</p>
+          </div>
+          <div className={styles.MovieRating}>
+            <p className={styles.ratingNumber}>{movie.vote_average.toFixed(1)}</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

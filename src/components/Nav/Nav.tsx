@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom"; 
 import styles from "./Nav.module.scss";
 import pixemaSVG from "../icons/pixema_light.svg";
 
@@ -25,7 +26,9 @@ const Nav: React.FC = () => {
     <div className={`${styles.nav} ${show ? styles.nav_black : ""}`}>
       <div className={styles.nav_contents}>
         <div className={styles.nav_logo}>
-          <img src={pixemaSVG} alt="Pixema Light Logo" />
+          <Link to="/">
+            <img src={pixemaSVG} alt="Pixema Light Logo" />
+          </Link>
         </div>
         <img
           className={styles.avatar}
