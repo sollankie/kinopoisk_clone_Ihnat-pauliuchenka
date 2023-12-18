@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom"; 
+import { useNavigate, Link } from "react-router-dom";
 import styles from "./Nav.module.scss";
 import pixemaSVG from "../icons/pixema_light.svg";
 
 const Nav: React.FC = () => {
   const [show, handleShow] = useState(false);
+  const navigate = useNavigate();
 
   const transitionNavBar = () => {
     if (window.scrollY > 100) {
@@ -31,6 +32,7 @@ const Nav: React.FC = () => {
           </Link>
         </div>
         <img
+          onClick={() => navigate("/profile")}
           className={styles.avatar}
           src="https://artscimedia.case.edu/wp-content/uploads/sites/79/2016/12/14205134/no-user-image.gif"
           alt=""
@@ -41,5 +43,4 @@ const Nav: React.FC = () => {
 };
 
 export default Nav;
-
 
